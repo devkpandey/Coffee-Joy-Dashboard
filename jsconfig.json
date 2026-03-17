@@ -1,5 +1,16 @@
+// {
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   }
+// }
+
+
 {
   "compilerOptions": {
+    "ignoreDeprecations": "6.0",   // ✅ add this line
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
