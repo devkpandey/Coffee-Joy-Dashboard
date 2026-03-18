@@ -2,15 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap'); */
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: 'Nunito', sans-serif;
   background-color: #f0f4f8;
   color: #334155;
 }
+/* Optional utility classes */
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel), serif;
+}
+
 
 ::-webkit-scrollbar { width: 4px; height: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
@@ -22,7 +34,7 @@ body {
   font-size: 14px; font-weight: 500; color: #94a3b8;
   transition: all 0.15s; cursor: pointer; text-decoration: none;
   white-space: nowrap; border: none; background: none;
-  font-family: 'Nunito', sans-serif;
+  /* font-family: 'Nunito', sans-serif; */
 }
 .sidebar-link:hover { background: rgba(255,255,255,0.07); color: #e2e8f0; }
 .sidebar-link.active { background: rgba(59,130,246,0.15); color: #60a5fa; border-right: 3px solid #3b82f6; }

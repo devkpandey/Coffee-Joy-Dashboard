@@ -8,7 +8,7 @@ export const getAllOrdersThunk = createAsyncThunk(
       const res = await getAllOrdersApi();
 
       console.log("FULL RESPONSE:", res.data); 
-      return res.data;
+      return res;
     } catch (error) {
       return rejectWithValue(error.response?.data || "Error fetching orders");
     }
@@ -32,7 +32,7 @@ const ordersSlice = createSlice({
       })
       .addCase(getAllOrdersThunk.fulfilled, (state, action) => {
         state.loading = false;
-        state.orders = action.payload?.data || action.payload || [];
+        state.orders = action.payload.orders || [];
       })
       .addCase(getAllOrdersThunk.rejected, (state, action) => {
         state.loading = false;

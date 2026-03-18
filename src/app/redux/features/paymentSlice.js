@@ -11,7 +11,8 @@ export const fetchAllPayments = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const res = await getAllPaymentsApi();
-      return res.data;
+
+      return res; // ✅ FIX (not res.data)
     } catch (err) {
       return rejectWithValue(err.response?.data || "Error fetching payments");
     }
@@ -55,9 +56,9 @@ const paymentSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchAllPayments.fulfilled, (state, action) => {
-        state.loading = false;
-        state.payments = action.payload;
-      })
+  state.loading = false;
+  state.payments = action.payload; 
+})
       .addCase(fetchAllPayments.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;

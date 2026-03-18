@@ -16,31 +16,44 @@ export default function PaymentsTable() {
     (state) => state.payments
   );
 
-  const [userMap, setUserMap] = useState({});
+  const [orderUserMap, setOrderUserMap] = useState({});
 
-  //  Fetch payments
+  // ✅ Fetch payments
   useEffect(() => {
     dispatch(fetchAllPayments());
   }, [dispatch]);
 
-  // Fetch users and create map
+  // ✅ Fetch orders and map user names
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchOrders = async () => {
       try {
-        const res = await axios.get("/api/users");
+        const res = await axios.get(
+          "https://coffeewebapi.barecms.com/api/orders/get-all-orders"
+        );
+
+        console.log("ORDERS API:", res.data);
+
+        // 🔥 IMPORTANT FIX (handle both structures)
+        const ordersArray = res.data.data || res.data;
+
         const map = {};
 
-        res.data.forEach((user) => {
-          map[user.id] = user.name;
+        ordersArray.forEach((order) => {
+          const key = String(order.order_id).trim(); // ensure string match
+          const name = order.name?.trim() || "Unknown";
+
+          map[key] = name;
         });
 
-        setUserMap(map);
+        console.log("MAP:", map);
+
+        setOrderUserMap(map);
       } catch (err) {
-        console.error("User fetch error", err);
+        console.error("Order fetch error", err);
       }
     };
 
-    fetchUsers();
+    fetchOrders();
   }, []);
 
   const handleRefund = (id) => {
@@ -76,9 +89,9 @@ export default function PaymentsTable() {
                     <td className="p-3">{p.id}</td>
                     <td className="p-3">{p.order_id}</td>
 
-                    {/* ✅ REAL USER NAME */}
+                    {/* ✅ USER NAME FIX */}
                     <td className="p-3 font-medium">
-                      {userMap[p.user_id] || "Loading..."}
+                      {orderUserMap[String(p.order_id)] || "Loading..."}
                     </td>
 
                     <td className="p-3">₹{p.amount}</td>
