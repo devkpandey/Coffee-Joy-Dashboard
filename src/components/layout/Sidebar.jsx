@@ -29,8 +29,8 @@ const navGroups = [
       { label: 'Orders', icon: ShoppingCart, sub: [
         { label: 'List', href: '/orders' },
       ]},
-      { label: 'Purchases', icon: CreditCard, sub: [
-        { label: 'List', href: '/purchases' },
+      { label: 'Payments', icon: CreditCard, sub: [
+        { label: 'List', href: '/payments' },
       ]},
       { label: 'Invoices', icon: FileText, sub: [
         { label: 'List', href: '/invoices' },
