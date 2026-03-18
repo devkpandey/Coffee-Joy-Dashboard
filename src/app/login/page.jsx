@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useDispatch , useSelector } from 'react-redux'
 import { sellerLoginThunk } from '../redux/features/sellerAuthSlice'
+import OTPInput from '@/components/OTPInput'
 
 
 export default function LoginPage() {
@@ -14,7 +15,7 @@ export default function LoginPage() {
   })
   const dispatch = useDispatch()
  
-  const seller = useSelector((state)=> state.sellerAuth)
+  const {otpSent , seller}= useSelector((state)=> state.seller)
 
  
   const handleOnChnage = (e)=>{
@@ -22,14 +23,19 @@ export default function LoginPage() {
     setSellerData({...sellerData , [name]: value})
   }
 
-  const handleLogin = (data) => {
-    dispatch(sellerLoginThunk(data));
-  };
+  const handleLogin = (e) => {
+  e.preventDefault(); // 🔥 stop page reload
+
+  console.log("Sending data:", sellerData); // debug
+
+  dispatch(sellerLoginThunk(sellerData));
+};
 
   console.log("this is the seller data:" , sellerData)
 
-
-
+if(otpSent){
+  return <OTPInput  email={sellerData.email}/>
+}
   return (
     <div style={{ minHeight: '100vh', display: 'flex', background: '#f0f4f8' }}>
       {/* Left panel */}
