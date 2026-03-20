@@ -1,5 +1,9 @@
 {
-  "/subscription/subscriptions/page": "app/subscription/subscriptions/page.js",
-  "/subscription/plans/page": "app/subscription/plans/page.js",
-  "/profile/page": "app/profile/page.js"
+  "/coupon/list/page": "app/coupon/list/page.js",
+  "/subscription/create-plan/page": "app/subscription/create-plan/page.js",
+  "/coupon/create/page": "app/coupon/create/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/orders/page": "app/orders/page.js",
+  "/products/list/page": "app/products/list/page.js",
+  "/products/grid/page": "app/products/grid/page.js"
 }
