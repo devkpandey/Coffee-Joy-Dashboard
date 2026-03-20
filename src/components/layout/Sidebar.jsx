@@ -22,9 +22,10 @@ const navGroups = [
       { label: 'Category', icon: Tag, sub: [
         { label: 'List', href: '/categories' },
       ]},
-      { label: 'Inventory', icon: Box, sub: [
-        { label: 'Warehouse', href: '/inventory/warehouse' },
-        { label: 'Received Orders', href: '/inventory/received' },
+      { label: 'Subscription', icon: Box, sub: [
+        { label: 'Create Plans', href: '/subscription/create-plan' }, 
+        { label: 'Plans', href: '/subscription/plans' },
+        { label: 'Subscribed Users', href: '/subscription/subscriptions' },
       ]},
       { label: 'Orders', icon: ShoppingCart, sub: [
         { label: 'List', href: '/orders' },
@@ -43,26 +44,7 @@ const navGroups = [
     section: 'Users',
     items: [
       { label: 'Profile', href: '/profile', icon: User },
-      { label: 'Roles', icon: Shield, sub: [{ label: 'List', href: '/roles' }] },
-      { label: 'Permissions', href: '/permissions', icon: Layers },
       { label: 'Customers', icon: Users, sub: [{ label: 'List', href: '/customers' }] },
-      { label: 'Sellers', icon: Store, sub: [{ label: 'List', href: '/sellers' }] },
-    ],
-  },
-  {
-    section: 'Other',
-    items: [
-      { label: 'Coupons', icon: Ticket, sub: [{ label: 'List', href: '/coupons' }] },
-      { label: 'Reviews', href: '/reviews', icon: Star },
-    ],
-  },
-  {
-    section: 'Apps',
-    items: [
-      { label: 'Chat', href: '/apps/chat', icon: MessageSquare },
-      { label: 'Email', href: '/apps/email', icon: Mail },
-      { label: 'Calendar', href: '/apps/calendar', icon: Calendar },
-      { label: 'Todo', href: '/apps/todo', icon: CheckSquare },
     ],
   },
   {
@@ -167,7 +149,7 @@ export default function Sidebar({ collapsed }) {
         </div>
         {!collapsed && (
           <span style={{ color: '#fff', fontWeight: 800, fontSize: 18, marginLeft: 10 }}>
-            Larkon
+            Coffee&Joy
           </span>
         )}
       </div>

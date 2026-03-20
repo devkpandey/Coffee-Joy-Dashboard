@@ -37,8 +37,8 @@ export default function DashboardLayout({ children, title }) {
             background: '#fff',
           }}
         >
-          © 2024 Larkon. Designed &amp; Developed by{' '}
-          <a href="#" style={{ color: '#3b82f6' }}>Larkon Team</a>
+          © 2026 Coffee&Joy. Designed &amp; Developed by{' '}
+          <a href="#" style={{ color: '#3b82f6' }}>Coffee&Joy team</a>
         </footer>
       </div>
     </div>
