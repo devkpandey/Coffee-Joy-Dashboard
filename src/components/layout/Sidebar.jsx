@@ -19,8 +19,9 @@ const navGroups = [
         { label: 'Grid', href: '/products/grid' },
         { label: 'Create', href: '/products/create' },
       ]},
-      { label: 'Category', icon: Tag, sub: [
-        { label: 'List', href: '/categories' },
+      { label: 'Coupons', icon: Tag, sub: [
+        { label: 'List', href: '/coupon/list' },
+        { label: 'Create', href: '/coupon/create' },
       ]},
       { label: 'Subscription', icon: Box, sub: [
         { label: 'Create Plans', href: '/subscription/create-plan' }, 
