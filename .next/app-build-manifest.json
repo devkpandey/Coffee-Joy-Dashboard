@@ -21,25 +21,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
     ],
-    "/products/list/page": [
+    "/payments/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/products/list/page.js"
-    ],
-    "/products/create/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/products/create/page.js"
-    ],
-    "/profile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/profile/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/chunks/app/payments/page.js"
     ]
   }
 }

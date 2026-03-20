@@ -1,4 +1,4 @@
-// File: C:\coffee_Dashboard\larkon-final\src\app\dashboard\page.jsx
+// File: C:\Users\UniTech-02\Documents\Unipolar\Frontend_coffee\Coffee-Joy-Dashboard\src\app\dashboard\page.jsx
 import * as entry from '../../../../src/app/dashboard/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
